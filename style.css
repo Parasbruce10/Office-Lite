@@ -691,7 +691,7 @@ body {
     }
 
     .nav-item {
-        width: 100%;
+        width: 100%; 
         /* Taake pura area clickable ho aur text left se shuru ho */
         text-align: left;
         padding: 12px 15px !important;
