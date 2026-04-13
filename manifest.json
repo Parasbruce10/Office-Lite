@@ -1,0 +1,15 @@
+{
+  "short_name": "Office Lite",
+  "name": "Office Lite Web App",
+  "icons": [
+    {
+      "src": "officelite.jpg",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
