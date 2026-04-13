@@ -1,0 +1,700 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #e6e9ef;
+    /* Subtle light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Dashboard Styles --- */
+.dashboard-container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #f7f9fc;
+    /* Clean white-grey dashboard surface */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    background-color: #1a2033;
+    color: white;
+    padding: 15px 25px;
+    /* Side ki padding thodi kam karein */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* Ensure karein ke laptop par line change na ho */
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-item {
+    padding: 8px 12px;
+    /* Pehle padding zyada thi, ise kam kar dein */
+    font-size: 0.85rem;
+    /* Font size thoda chota karein laptop screen ke liye */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    /* Ye line ensure karegi ke text do lines mein na tute */
+}
+
+.header-nav {
+    display: flex;
+    gap: 8px;
+    /* Buttons ke darmiyan gap ko 15px se kam kar ke 8px kar dein */
+    align-items: center;
+}
+
+.nav-item:hover {
+    background-color: #3b456e;
+}
+
+.nav-item.active {
+    background-color: #2e3b66;
+    /* Matching active state in the image */
+}
+
+/* Create New Document Section */
+.create-section {
+    padding: 40px;
+    background-color: white;
+}
+
+.create-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a2033;
+    margin-bottom: 25px;
+}
+
+.category-cards {
+    display: flex;
+    gap: 25px;
+}
+
+.category-card {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #e1e7f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-image-box {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a2033;
+}
+
+.card-icon {
+    font-size: 4rem;
+}
+
+/* Specific Card Colors and Styling */
+.word-card .card-image-box {
+    background-color: #1a2033;
+    color: white;
+}
+
+.pres-card .card-image-box {
+    background-color: #5d2b7d;
+    color: white;
+}
+
+/* Matches presentation card color */
+.sheet-card .card-image-box {
+    background-color: #0b7a43;
+    color: white;
+}
+
+/* Matches sheet card color */
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.card-documents {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.create-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.word-btn {
+    background-color: #2a5fbd;
+}
+
+/* Word blue */
+.pres-btn {
+    background-color: #8c19bf;
+}
+
+/* Presentation purple */
+.sheet-btn {
+    background-color: #0c9e58;
+}
+
+/* Sheet green */
+
+/* Recent Documents Section */
+.recent-section {
+    padding: 0 40px 40px 40px;
+    background-color: white;
+}
+
+.recent-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a2033;
+    margin-bottom: 25px;
+}
+
+.recent-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.recent-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #e1e7f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.recent-icon-box {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 1.5rem;
+}
+
+.word-recent .recent-icon-box {
+    color: #2a5fbd;
+}
+
+.pres-recent .recent-icon-box {
+    color: #8c19bf;
+}
+
+.sheet-recent .recent-icon-box {
+    color: #0c9e58;
+}
+
+.recent-details {
+    flex-grow: 1;
+}
+
+.recent-name {
+    font-weight: bold;
+}
+
+.recent-date {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.options-btn {
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background-color: #e1e7f0;
+    /* Matches the lower surface from image */
+    color: #1a2033;
+    padding: 20px 40px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav span {
+    cursor: pointer;
+}
+
+/* --- Editor Styles --- */
+.editor-container {
+    padding: 40px;
+    background-color: white;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    padding: 8px 15px;
+    background-color: #1a2033;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.save-btn {
+    padding: 10px 20px;
+    background-color: #2a5fbd;
+    /* Word blue by default, can make specific */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Specific Editor Content */
+.text-editor-box {
+    width: 100%;
+    height: 300px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+}
+
+.sheet-grid {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.sheet-grid td {
+    border: 1px solid #ccc;
+    width: 100px;
+    /* Base width */
+    height: 25px;
+    /* Base height */
+}
+
+.grid-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 2px 5px;
+}
+
+.slides-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.slide-input-view {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    /* Side scrolling khatam karne ke liye */
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px;
+    background: #f3f4f6;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+}
+
+.toolbar button,
+.toolbar select {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 4px;
+}
+
+.rich-editor {
+    flex-grow: 1;
+    width: 100%;
+    padding: 20px;
+    min-height: 500px;
+    border: 1px solid #ddd;
+    background: white;
+    overflow-y: auto;
+    outline: none;
+    font-size: 16px;
+}
+
+/* === RESPONSIVE CSS - Office Lite === */
+/* Hamburger - hidden on desktop */
+.hamburger-btn {
+    display: none !important;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px
+}
+
+@media(max-width:992px) {
+    .category-cards {
+        flex-direction: column !important;
+        gap: 15px !important
+    }
+
+    .ppt-workspace {
+        flex-direction: column !important
+    }
+
+    .ppt-sidebar {
+        width: 100% !important;
+        max-height: 140px;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        border-right: none !important;
+        border-bottom: 1px solid #ddd
+    }
+
+    .ppt-canvas-area {
+        padding: 15px !important
+    }
+
+    .ppt-canvas {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 300px;
+        aspect-ratio: 16/9
+    }
+}
+
+@media(max-width:768px) {
+    body {
+        align-items: flex-start
+    }
+
+    .dashboard-container {
+        width: 100%;
+        border-radius: 0
+    }
+
+    .header {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        padding: 12px 15px;
+        gap: 0;
+        justify-content: space-between;
+        align-items: center
+    }
+
+    .header-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%
+    }
+
+    .hamburger-btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem
+    }
+
+    .brand {
+        font-size: 1.2rem
+    }
+
+    .header-nav {
+        display: none !important;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        margin-top: 10px;
+        background: #242d45;
+        border-radius: 8px;
+        overflow: hidden
+    }
+
+    .header-nav.nav-open {
+        display: flex !important
+    }
+
+    .nav-item {
+        padding: 12px 15px;
+        font-size: .9rem;
+        border-radius: 0;
+        text-align: left;
+        border-bottom: 1px solid #3b456e;
+        width: 100%
+    }
+
+    .nav-item:last-child {
+        border-bottom: none
+    }
+
+    .nav-item:hover,
+    .nav-item.active {
+        background: #3b456e
+    }
+
+    .create-section {
+        padding: 20px 15px !important
+    }
+
+    .create-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 20px !important
+    }
+
+    .category-cards {
+        padding: 0 10px !important;
+        flex-direction: column !important
+    }
+
+    .card-icon {
+        font-size: 3rem
+    }
+
+    .footer {
+        padding: 20px 15px !important
+    }
+
+    .editor-container {
+        padding: 10px !important
+    }
+
+    .editor-header {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 15px !important
+    }
+
+    .editor-header h2 {
+        font-size: 1.1rem
+    }
+
+    .toolbar {
+        gap: 4px !important;
+        padding: 8px 10px !important
+    }
+
+    .toolbar button,
+    .toolbar select {
+        padding: 4px 7px;
+        font-size: .8rem
+    }
+
+    .rich-editor,
+    #editor-main {
+        width: 100% !important;
+        min-height: 60vh !important;
+        padding: 15px !important;
+        margin: 0 auto !important;
+        box-shadow: 0 0 8px rgba(0, 0, 0, .1) !important
+    }
+
+    .word-editor-scroll {
+        padding: 10px !important
+    }
+
+    .ppt-canvas {
+        min-height: 200px;
+        padding: 20px !important
+    }
+}
+
+@media(max-width:480px) {
+    .header {
+        padding: 10px 12px
+    }
+
+    .brand {
+        font-size: 1rem;
+        gap: 6px
+    }
+
+    .nav-item {
+        padding: 10px 12px;
+        font-size: .85rem
+    }
+
+    .create-title {
+        font-size: 1.1rem !important
+    }
+
+    .card-icon {
+        font-size: 2rem
+    }
+
+    .card-content {
+        padding: 10px
+    }
+
+    .create-btn {
+        padding: 8px;
+        font-size: .8rem
+    }
+
+    .footer {
+        padding: 15px 10px !important;
+        gap: 5px !important
+    }
+
+    .back-btn,
+    .save-btn {
+        padding: 6px 10px !important;
+        font-size: .8rem
+    }
+
+    .toolbar button,
+    .toolbar select {
+        padding: 3px 5px;
+        font-size: .75rem
+    }
+
+    .rich-editor,
+    #editor-main {
+        font-size: 14px !important;
+        min-height: 50vh !important;
+        padding: 12px !important
+    }
+
+    .ppt-canvas {
+        min-height: 180px;
+        padding: 15px !important
+    }
+}
+
+@media(max-width:360px) {
+    .brand {
+        font-size: .9rem
+    }
+
+    .editor-header {
+        flex-direction: column !important;
+        align-items: stretch !important
+    }
+}
+
+@media(max-width: 768px) {
+
+    .header-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        /* Buttons ko start (left) mein lane ke liye */
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .header-nav>div {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        /* Legal button ke niche line */
+        width: 100%;
+    }
+
+
+    /* Legal button wali div ko bhi left align karein */
+    .header-nav>div {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .nav-item {
+        width: 100%;
+        /* Taake pura area clickable ho aur text left se shuru ho */
+        text-align: left;
+        padding: 12px 15px !important;
+    }
+
+}
