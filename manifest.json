@@ -5,11 +5,12 @@
     {
       "src": "officelite.jpg",
       "sizes": "192x192 512x512",
-      "type": "image/jpeg"
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#1a2033",
   "background_color": "#ffffff"
 }
