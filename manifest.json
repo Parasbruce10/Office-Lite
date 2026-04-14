@@ -3,20 +3,13 @@
   "name": "Office Lite Web App",
   "icons": [
     {
-      "src": "officelite-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "officelite-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
+      "src": "officelite.jpg",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": ".",
   "display": "standalone",
-  "theme_color": "#1a2033",
+  "theme_color": "#000000",
   "background_color": "#ffffff"
 }
