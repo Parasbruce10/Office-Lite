@@ -1344,12 +1344,12 @@ const ContactUs = () => {
 
                     <div>
                         <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', color: '#1a2033' }}>Your Name</label>
-                        <input type="text" name="name" required placeholder="John Doe" style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ccc', outline: 'none', fontSize: '1rem' }} />
+                        <input type="text" name="name" required placeholder="Name" style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ccc', outline: 'none', fontSize: '1rem' }} />
                     </div>
 
                     <div>
                         <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', color: '#1a2033' }}>Your Email</label>
-                        <input type="email" name="email" required placeholder="john@example.com" style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ccc', outline: 'none', fontSize: '1rem' }} />
+                        <input type="email" name="email" required placeholder="Email" style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ccc', outline: 'none', fontSize: '1rem' }} />
                     </div>
 
                     <div>
