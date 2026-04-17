@@ -1476,38 +1476,140 @@ const OfficeLiteApp = () => {
 
     if (currentView === 'dashboard') {
         mainBodyContent = (
-            <section className="create-section" style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <h2 className="create-title" style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '40px' }}>CREATE NEW DOCUMENT</h2>
-                <div className="category-cards" style={{ maxWidth: '1200px', margin: '0 auto', width: '100%', padding: '0 20px' }}>
-                    {/* Word Card */}
-                    <div className="category-card word-card" onClick={() => openEditor('word')}>
-                        <div className="card-image-box"><i className="fas fa-file-word card-icon"></i></div>
-                        <div className="card-content">
-                            <h3 className="card-title">WORD</h3>
-                            <p className="card-documents">Sample documents, reports, letters</p>
-                            <button className="create-btn word-btn">Word Document</button>
-                        </div>
+            <div style={{ flexGrow: 1, backgroundColor: '#fcfcfe', paddingBottom: '100px', fontFamily: "'Inter', sans-serif", overflow: 'hidden', position: 'relative' }}>
+                
+                {/* 🎨 ADVANCED WORKSPACE ANIMATIONS */}
+                <style>{`
+                    @keyframes revealUp {
+                        from { opacity: 0; transform: translateY(40px) scale(0.98); }
+                        to { opacity: 1; transform: translateY(0) scale(1); }
+                    }
+                    @keyframes meshGradient {
+                        0% { background-position: 0% 50%; }
+                        50% { background-position: 100% 50%; }
+                        100% { background-position: 0% 50%; }
+                    }
+                    @keyframes softFloat {
+                        0% { transform: translateY(0px) rotate(0deg); }
+                        50% { transform: translateY(-15px) rotate(2deg); }
+                        100% { transform: translateY(0px) rotate(0deg); }
+                    }
+                    
+                    .anim-1 { animation: revealUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+                    .anim-2 { animation: revealUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards; opacity: 0; }
+                    .anim-3 { animation: revealUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards; opacity: 0; }
+                    
+                    .hero-gradient { 
+                        background: linear-gradient(-45deg, #2563eb, #9333ea, #f43f5e, #3b82f6); 
+                        background-size: 400% 400%;
+                        animation: meshGradient 10s ease infinite;
+                        -webkit-background-clip: text; 
+                        -webkit-text-fill-color: transparent; 
+                    }
+
+                    .premium-card { 
+                        background: rgba(255, 255, 255, 0.7); 
+                        backdrop-filter: blur(15px);
+                        border-radius: 35px; padding: 50px 35px; 
+                        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+                        border: 1px solid rgba(255, 255, 255, 0.6); 
+                        box-shadow: 0 10px 30px -10px rgba(0,0,0,0.03);
+                    }
+                    .premium-card:hover { 
+                        transform: translateY(-20px) scale(1.02); 
+                        background: #ffffff;
+                        box-shadow: 0 45px 90px -20px rgba(0, 0, 0, 0.1);
+                        border-color: #3b82f6;
+                    }
+                    
+                    .floating-icon { animation: softFloat 4s ease-in-out infinite; }
+
+                    .get-started-btn {
+                        background: #0f172a; color: white; padding: 22px 60px; 
+                        border-radius: 20px; fontSize: 19px; fontWeight: '800'; 
+                        border: none; cursor: pointer; transition: all 0.4s ease;
+                        letter-spacing: 0.5px;
+                        box-shadow: 0 15px 35px rgba(15, 23, 42, 0.2);
+                    }
+                    .get-started-btn:hover {
+                        background: #3b82f6;
+                        transform: translateY(-5px) scale(1.05);
+                        box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+                    }
+                `}</style>
+
+                {/* 🌌 AMBIENT BACKGROUND */}
+                <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)' }}></div>
+                <div style={{ position: 'absolute', bottom: '5%', left: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(147,51,234,0.08) 0%, transparent 70%)' }}></div>
+
+                {/* 🌟 HERO SECTION */}
+                <div className="anim-1" style={{ textAlign: 'center', padding: '140px 20px 90px', maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: '#fff', padding: '12px 28px', borderRadius: '100px', marginBottom: '40px', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', border: '1px solid #f1f5f9' }}>
+                        <span className="floating-icon" style={{ display: 'inline-block' }}>✨</span>
+                        <span style={{ fontSize: '14px', fontWeight: '800', color: '#64748b', textTransform: 'uppercase', letterSpacing: '1.5px' }}>The Future of Desktop Apps</span>
                     </div>
-                    {/* Presentation Card */}
-                    <div className="category-card pres-card" onClick={() => openEditor('presentation')}>
-                        <div className="card-image-box"><i className="fas fa-file-powerpoint card-icon"></i></div>
-                        <div className="card-content">
-                            <h3 className="card-title">PRESENTATION</h3>
-                            <p className="card-documents">Slide decks, pitch presentations</p>
-                            <button className="create-btn pres-btn">Presentation Slides</button>
-                        </div>
+                    
+                    <h1 style={{ fontSize: 'clamp(55px, 9vw, 92px)', fontWeight: '1000', color: '#0f172a', lineHeight: '0.9', marginBottom: '40px', letterSpacing: '-4px' }}>
+                        Create with <br/>
+                        <span className="hero-gradient">Confidence.</span>
+                    </h1>
+                    
+                    <p style={{ fontSize: '24px', color: '#475569', lineHeight: '1.6', maxWidth: '850px', margin: '0 auto 60px', fontWeight: '400', opacity: 0.9 }}>
+                        Powerful tools that respect your privacy. No cloud, no tracking—just speed and security built directly into your browser.
+                    </p>
+
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        {/* ✅ CLICKING THIS NOW OPENS WORD EDITOR */}
+                        <button className="get-started-btn" onClick={() => openEditor('word')}>
+                            Get Started &nbsp; <i className="fas fa-arrow-right"></i>
+                        </button>
                     </div>
-                    {/* Sheet Card */}
-                    <div className="category-card sheet-card" onClick={() => openEditor('sheet')}>
-                        <div className="card-image-box"><i className="fas fa-file-excel card-icon"></i></div>
-                        <div className="card-content">
-                            <h3 className="card-title">SHEET</h3>
-                            <p className="card-documents">Data analysis, spreadsheets, budgets</p>
-                            <button className="create-btn sheet-btn">Spreadsheet</button>
+                </div>
+
+                {/* 🛠️ TOOLS GRID */}
+                <div className="anim-2" style={{ maxWidth: '1300px', margin: '0 auto', padding: '0 30px', position: 'relative', zIndex: 1 }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '50px' }}>
+                        
+                        {/* Word Card */}
+                        <div className="premium-card" onClick={() => openEditor('word')} style={{ cursor: 'pointer' }}>
+                            <div className="floating-icon" style={{ fontSize: '56px', color: '#3b82f6', marginBottom: '30px' }}><i className="fas fa-file-word"></i></div>
+                            <h3 style={{ fontSize: '30px', fontWeight: '900', color: '#0f172a', marginBottom: '20px' }}>Word Editor</h3>
+                            <p style={{ color: '#64748b', fontSize: '18px', lineHeight: '1.7', marginBottom: '40px' }}>Advanced text formatting with local storage support. Write without limits.</p>
+                            <div style={{ height: '2px', width: '40px', background: '#3b82f6', transition: 'width 0.3s ease' }} className="card-line"></div>
+                        </div>
+
+                        {/* Presentation Card */}
+                        <div className="premium-card" onClick={() => openEditor('presentation')} style={{ cursor: 'pointer' }}>
+                            <div className="floating-icon" style={{ fontSize: '56px', color: '#a855f7', marginBottom: '30px', animationDelay: '0.5s' }}><i className="fas fa-layer-group"></i></div>
+                            <h3 style={{ fontSize: '30px', fontWeight: '900', color: '#0f172a', marginBottom: '20px' }}>Presentation Editor</h3>
+                            <p style={{ color: '#64748b', fontSize: '18px', lineHeight: '1.7', marginBottom: '40px' }}>Design interactive slides and presentations with high-fidelity exports.</p>
+                            <div style={{ height: '2px', width: '40px', background: '#a855f7' }}></div>
+                        </div>
+
+                        {/* Sheet Card */}
+                        <div className="premium-card" onClick={() => openEditor('sheet')} style={{ cursor: 'pointer' }}>
+                            <div className="floating-icon" style={{ fontSize: '56px', color: '#10b981', marginBottom: '30px', animationDelay: '1s' }}><i className="fas fa-table"></i></div>
+                            <h3 style={{ fontSize: '30px', fontWeight: '900', color: '#0f172a', marginBottom: '20px' }}>Excel Sheet</h3>
+                            <p style={{ color: '#64748b', fontSize: '18px', lineHeight: '1.7', marginBottom: '40px' }}>Handle complex tables and calculations instantly within your browser tab.</p>
+                            <div style={{ height: '2px', width: '40px', background: '#10b981' }}></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                {/* 📊 FEATURE HIGHLIGHT */}
+                <div className="anim-3" style={{ textAlign: 'center', marginTop: '120px', padding: '0 20px' }}>
+                    <div style={{ maxWidth: '800px', margin: '0 auto', borderTop: '1px solid #e2e8f0', paddingTop: '60px' }}>
+                        <h2 style={{ fontSize: '20px', fontWeight: '800', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '3px', marginBottom: '40px' }}>Trust by design</h2>
+                        <div style={{ display: 'flex', justifyContent: 'center', gap: '60px', opacity: 0.6, flexWrap: 'wrap' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '18px', fontWeight: '600' }}><i className="fas fa-bolt"></i> Local Speed</div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '18px', fontWeight: '600' }}><i className="fas fa-lock"></i> End-to-End Privacy</div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '18px', fontWeight: '600' }}><i className="fas fa-cloud-slash"></i> Offline Ready</div>
                         </div>
                     </div>
                 </div>
-            </section>
+
+            </div>
         );
     } else if (currentView === 'word') {
         mainBodyContent = <WordEditor onClose={closeEditor} />;
