@@ -1568,7 +1568,7 @@ const OfficeLiteApp = () => {
 
                 {/* 🛠️ TOOLS GRID */}
                 <div className="anim-2" style={{ maxWidth: '1300px', margin: '0 auto', padding: '0 30px', position: 'relative', zIndex: 1 }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '50px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '30px' }}>
                         
                         {/* Word Card */}
                         <div className="premium-card" onClick={() => openEditor('word')} style={{ cursor: 'pointer' }}>
