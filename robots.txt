@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /app.js
+Allow: /style.css
+
+Sitemap: https://officelite.resumepro.it.com/sitemap.xml
