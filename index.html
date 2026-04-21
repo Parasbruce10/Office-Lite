@@ -3,81 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Office Lite - Free Online Word Editor</title>
-    
+
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="BprjC503CEeSm0vQOMw7LKqSoXhSlNqXOeMsEjBViV4" />
+
+    <!-- SEO -->
+    <title>Office Lite - Free Online Word Editor & Document Tools</title>
+    <meta name="description" content="Office Lite is a fast, free, and easy-to-use online word editor and document management tool. Create, edit, and format your text instantly directly from your browser.">
+    <meta name="keywords" content="online word editor, free document editor, text formatting tool, Office Lite, type online">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Office Lite - Free Online Word Editor">
+    <meta property="og:description" content="Create and edit your documents instantly for free.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon & PWA -->
+    <link rel="icon" type="image/png" href="officelite.png">
+    <link rel="apple-touch-icon" href="officelite.png">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" type="image/png" href="officelite.png">
 
-    <style>
-        /* 1. Body aur Header ko original halat mein rakhne ke liye */
-        body {
-            margin: 0;
-            padding: 0;
-            display: block !important; /* Flexbox bilkul hata diya */
-        }
-
-        /* 2. Main content area */
-        #root {
-            width: 100%;
-            display: block;
-            min-height: 500px; /* Thodi space taake footer niche rahe */
-        }
-
-        /* 3. Footer ke baad ads ke liye extra space */
-        .ads-bottom-section {
-            margin-top: 100px; /* Footer khatam hone ke baad 100px ka gap */
-            padding: 40px 0;
-            border-top: 1px solid #eee;
-            text-align: center;
-            clear: both !important; /* Side ads ko niche dhakelne ke liye */
-            width: 100%;
-        }
-
-        .ad-box {
-            display: block;
-            margin: 30px auto;
-        }
-    </style>
-
+    <!-- HEAD AD: Background script (koi visual nahi) -->
     <script src="https://pl29210508.profitablecpmratenetwork.com/96/a4/2c/96a42c9a29563053f1beee1210461370.js"></script>
 </head>
 <body>
 
+    <!-- React App yahan render hoga -->
+    <!-- Footer + Ads Section dono app.js ke andar hain -->
     <div id="root"></div>
 
-    <div class="ads-bottom-section">
-        
-        <p style="font-size: 10px; color: #999; margin-bottom: 20px;">ADVERTISEMENTS</p>
-
-        <div class="ad-box">
-            <script type="text/javascript">
-                atOptions = { 'key' : '63bdb46aa078c35a999684b9a4dec76e', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
-            </script>
-            <script type="text/javascript" src="https://www.highperformanceformat.com/63bdb46aa078c35a999684b9a4dec76e/invoke.js"></script>
-        </div>
-
-        <div class="ad-box">
-            <div id="container-78378795ee3aaa45989a186b4221fe76"></div>
-            <script async="async" data-cfasync="false" src="https://pl29210511.profitablecpmratenetwork.com/78378795ee3aaa45989a186b4221fe76/invoke.js"></script>
-        </div>
-
-        <div class="ad-box">
-            <script type="text/javascript">
-                atOptions = { 'key' : 'b0d24676f6c7513812db2b021f5c6495', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
-            </script>
-            <script type="text/javascript" src="https://www.highperformanceformat.com/b0d24676f6c7513812db2b021f5c6495/invoke.js"></script>
-        </div>
-
-    </div>
-
-    <script src="https://quge5.com/88/tag.min.js" data-zone="232117" async data-cfasync="false"></script>
-    <script>(function(s){s.dataset.zone='10906069',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
+    <!-- ═══════════════════════════════════════════════
+         REACT + BABEL
+    ════════════════════════════════════════════════ -->
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel" src="app.js"></script>
 
-</body> 
+    <!-- ═══════════════════════════════════════════════
+         ADS INJECT SCRIPT
+         React render hone ke baad ads ko slots mein daalta hai
+         Taake woh kabhi bhi cards ya content ke upar na aayein
+    ════════════════════════════════════════════════ -->
+    <script>
+        // React render hone ka wait karo, phir ads inject karo
+        function injectAds() {
+            var slot1 = document.getElementById('ad-slot-1');
+            var slot3 = document.getElementById('ad-slot-3');
+            var slotCPM = document.getElementById('container-78378795ee3aaa45989a186b4221fe76');
+
+            if (!slot1 || !slot3 || !slotCPM) {
+                // Agar slots abhi ready nahi, 300ms baad dobara try karo
+                setTimeout(injectAds, 300);
+                return;
+            }
+
+            // AD 1: HighPerformanceFormat 320x50
+            if (!slot1.dataset.loaded) {
+                slot1.dataset.loaded = 'true';
+                var s1 = document.createElement('script');
+                s1.text = "atOptions = {'key':'63bdb46aa078c35a999684b9a4dec76e','format':'iframe','height':50,'width':320,'params':{}};";
+                slot1.appendChild(s1);
+                var s1src = document.createElement('script');
+                s1src.src = 'https://www.highperformanceformat.com/63bdb46aa078c35a999684b9a4dec76e/invoke.js';
+                slot1.appendChild(s1src);
+            }
+
+            // AD 2: ProfitableCPM Invoke (container already in app.js)
+            if (!slotCPM.dataset.loaded) {
+                slotCPM.dataset.loaded = 'true';
+                var s2 = document.createElement('script');
+                s2.async = true;
+                s2.setAttribute('data-cfasync', 'false');
+                s2.src = 'https://pl29210511.profitablecpmratenetwork.com/78378795ee3aaa45989a186b4221fe76/invoke.js';
+                slotCPM.appendChild(s2);
+            }
+
+            // AD 3: HighPerformanceFormat 300x250
+            if (!slot3.dataset.loaded) {
+                slot3.dataset.loaded = 'true';
+                var s3 = document.createElement('script');
+                s3.text = "atOptions = {'key':'b0d24676f6c7513812db2b021f5c6495','format':'iframe','height':250,'width':300,'params':{}};";
+                slot3.appendChild(s3);
+                var s3src = document.createElement('script');
+                s3src.src = 'https://www.highperformanceformat.com/b0d24676f6c7513812db2b021f5c6495/invoke.js';
+                slot3.appendChild(s3src);
+            }
+        }
+
+        // Page load hone ke baad shuru karo
+        window.addEventListener('load', function() {
+            setTimeout(injectAds, 500);
+        });
+    </script>
+
+    <!-- ═══════════════════════════════════════════════
+         BACKGROUND / ZONE ADS
+         Yeh sab invisible hain — layout affect nahi karte
+    ════════════════════════════════════════════════ -->
+
+    <!-- ProfitableCPM Direct Link (invisible) -->
+    <a href="https://www.profitablecpmratenetwork.com/cj3dueku0d?key=ae4c9908a4dc10eab6400868e4c96af2"
+       style="display:none;" aria-hidden="true"></a>
+
+    <!-- ProfitableCPM Invoke Script -->
+    <script src="https://pl29210510.profitablecpmratenetwork.com/e0/60/32/e0603238b5b9d46773996f7c374c6bd0.js"></script>
+
+    <!-- Quge5 Zone -->
+    <script src="https://quge5.com/88/tag.min.js" data-zone="232117" async data-cfasync="false"></script>
+
+    <!-- 5gvci Zone -->
+    <script src="https://5gvci.com/act/files/tag.min.js?z=10906067" data-cfasync="false" async></script>
+
+    <!-- nap5k Zone -->
+    <script>
+        (function(s) {
+            s.dataset.zone = '10906069';
+            s.src = 'https://nap5k.com/tag.min.js';
+        })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+    </script>
+
+    <!-- n6wxm Vignette (fullscreen popunder — layout se alag) -->
+    <script>
+        (function(s) {
+            s.dataset.zone = '10906073';
+            s.src = 'https://n6wxm.com/vignette.min.js';
+        })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+    </script>
+
+</body>
 </html>

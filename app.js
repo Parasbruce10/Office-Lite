@@ -1732,6 +1732,33 @@ const OfficeLiteApp = () => {
                 </span>
             </footer>
 
+            {/* ═══════════════════════════════════════════
+                ADS SECTION — Footer ke bilkul baad
+                Sary ads yahan hain, content ko touch nahi karte
+            ════════════════════════════════════════════ */}
+            <div id="ads-below-footer" style={{
+                width: '100%',
+                background: '#f8fafc',
+                borderTop: '1px solid #e2e8f0',
+                padding: '30px 0 40px 0',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '20px'
+            }}>
+                <p style={{ fontSize: '10px', color: '#aaa', letterSpacing: '1px', margin: '0' }}>ADVERTISEMENTS</p>
+
+                {/* AD 1: 320x50 Banner */}
+                <div id="ad-slot-1" style={{ display: 'flex', justifyContent: 'center', width: '100%' }}></div>
+
+                {/* AD 2: ProfitableCPM Container */}
+                <div id="container-78378795ee3aaa45989a186b4221fe76" style={{ display: 'flex', justifyContent: 'center', width: '100%' }}></div>
+
+                {/* AD 3: 300x250 Banner */}
+                <div id="ad-slot-3" style={{ display: 'flex', justifyContent: 'center', width: '100%' }}></div>
+
+            </div>
+
         </div>
     );
 };
