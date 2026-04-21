@@ -728,6 +728,8 @@ const PresentationEditor = ({ onClose }) => {
 
     return (
         <div className="editor-container" style={{ display: 'flex', flexDirection: 'column', flexGrow: 1, backgroundColor: '#f3f4f6', height: '100vh' }}>
+            
+        
 
             {/* Header */}
             <div className="editor-header" style={{ padding: '15px 20px', background: 'white', borderBottom: '1px solid #ddd', display: 'flex', justifyContent: 'space-between' }}>
@@ -1631,22 +1633,6 @@ const OfficeLiteApp = () => {
     return (
         
         <div className="dashboard-container" style={{ width: '100%', maxWidth: '100%', minHeight: '100vh', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
-            
-            {/* ── TOP AD — Header se bilkul UPAR ── */}
-            <div id="top-ad-container" style={{
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '8px 0',
-                background: '#f0f0f0',
-                borderBottom: '1px solid #ddd',
-                minHeight: '66px',
-                boxSizing: 'border-box',
-                order: -1
-            }}>
-                <div id="ad-slot-top"></div>
-            </div>
 
             {/* Header */}
             <header className="header">
@@ -1766,7 +1752,7 @@ const OfficeLiteApp = () => {
                 <p style={{ fontSize: '10px', color: '#aaa', letterSpacing: '1px', margin: '0' }}>ADVERTISEMENTS</p>
 
                 {/* AD 1: 320x50 Banner */}
-                <div id="ad-slot-1" style={{ display: 'flex', justifyContent: 'center', width: '100%' }}></div>
+                <div id="ad-slot-top" style={{ display: 'flex', justifyContent: 'center', margin: '10px 0', minHeight: '50px' }}></div>
 
                 {/* AD 2: ProfitableCPM Container */}
                 <div id="container-78378795ee3aaa45989a186b4221fe76" style={{ display: 'flex', justifyContent: 'center', width: '100%' }}></div>

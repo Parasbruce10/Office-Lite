@@ -3,27 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="google-site-verification" content="BprjC503CEeSm0vQOMw7LKqSoXhSlNqXOeMsEjBViV4" />
-
     <title>Office Lite - Free Online Word Editor & Document Tools</title>
-    <meta name="description" content="Office Lite is a fast, free, and easy-to-use online word editor.">
     
     <link rel="icon" type="image/png" href="officelite.png">
-    <link rel="shortcut icon" type="image/png" href="officelite.png">
-    <link rel="apple-touch-icon" href="officelite.png">
-
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    #top-ad-banner {
+        width: 100% !important;
+        /* Is height ko barhany se ad neechy aye ga */
+        height: 140px !important; 
+        
+        display: flex !important;
+        justify-content: center !important;
+        
+        /* Ad ko container ke neechy (header ke paas) lane ke liye */
+        align-items: flex-end !important; 
+        
+        background: #ffffff;
+        padding-bottom: 15px; /* Ad aur header ke darmiyan gap */
+        flex-shrink: 0 !important;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    #root {
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    /* Agar ad phir bhi bohat upar lagay to is container ko height do */
+    #top-ad-banner > div {
+        margin-top: 50px; 
+    }
+</style>
 </head>
 <body>
 
+    <div id="top-ad-banner">
+        <div>
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '63bdb46aa078c35a999684b9a4dec76e',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="https://www.highperformanceformat.com/63bdb46aa078c35a999684b9a4dec76e/invoke.js"></script>
+        </div>
+    </div>
 
     <div id="root"></div>
 
-    <!-- (mango adds) -->
     <script src="https://quge5.com/88/tag.min.js" data-zone="231835" async data-cfasync="false"></script> 
-
 
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
@@ -32,44 +74,29 @@
     <script type="text/babel" src="app.js"></script>
 
     <script>
-        function runAdsSystem() {
-            // Hum sary slots dhoondty hain
-            var slot1 = document.getElementById('ad-slot-1');
-            var slot3 = document.getElementById('ad-slot-3');
+    // Footer Ads Logic
+    function runFooterAds() {
+        const slots = [
+            { id: 'ad-slot-1', key: '63bdb46aa078c35a999684b9a4dec76e', h: 50, w: 320 },
+            { id: 'ad-slot-3', key: 'b0d24676f6c7513812db2b021f5c6495', h: 250, w: 300 }
+        ];
 
-            // Agar React ne abhi tak page nahi banaya, toh thori der aur wait karo
-            if (!slot1 && !slot3) {
-                setTimeout(runAdsSystem, 500);
-                return;
+        slots.forEach(slotInfo => {
+            var el = document.getElementById(slotInfo.id);
+            if (el && !el.dataset.loaded) {
+                el.dataset.loaded = 'true';
+                var opt = document.createElement('script');
+                opt.text = "atOptions = {'key':'" + slotInfo.key + "','format':'iframe','height':" + slotInfo.h + ",'width':" + slotInfo.w + ",'params':{}};";
+                el.appendChild(opt);
+                var scr = document.createElement('script');
+                scr.src = 'https://www.highperformanceformat.com/' + slotInfo.key + '/invoke.js';
+                el.appendChild(scr);
             }
-
-            // 1. FOOTER AD 1 (320x50)
-            if (slot1 && !slot1.dataset.loaded) {
-                slot1.dataset.loaded = 'true';
-                var s1 = document.createElement('script');
-                s1.text = "atOptions = {'key':'63bdb46aa078c35a999684b9a4dec76e','format':'iframe','height':50,'width':320,'params':{}};";
-                slot1.appendChild(s1);
-                var s1src = document.createElement('script');
-                s1src.src = 'https://www.highperformanceformat.com/63bdb46aa078c35a999684b9a4dec76e/invoke.js';
-                slot1.appendChild(s1src);
-            }
-
-            // 2. FOOTER AD 3 (300x250)
-            if (slot3 && !slot3.dataset.loaded) {
-                slot3.dataset.loaded = 'true';
-                var s3 = document.createElement('script');
-                s3.text = "atOptions = {'key':'b0d24676f6c7513812db2b021f5c6495','format':'iframe','height':250,'width':300,'params':{}};";
-                slot3.appendChild(s3);
-                var s3src = document.createElement('script');
-                s3src.src = 'https://www.highperformanceformat.com/b0d24676f6c7513812db2b021f5c6495/invoke.js';
-                slot3.appendChild(s3src);
-            }
-        }
-
-        // Page load ke bad shuru karo
-        window.addEventListener('load', function() {
-            setTimeout(runAdsSystem, 800); // 800ms wait taake React fully load hojaye
         });
+    }
+
+    // React ka wait karne ke liye interval
+    setInterval(runFooterAds, 2000);
     </script>
 
 </body>
