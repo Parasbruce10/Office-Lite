@@ -23,7 +23,7 @@ body {
     /* Clean white-grey dashboard surface */
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* Header */
@@ -31,12 +31,15 @@ body {
     background-color: #1a2033;
     color: white;
     padding: 15px 25px;
-    /* Side ki padding thodi kam karein */
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
-    /* Ensure karein ke laptop par line change na ho */
+    
+    /* Ye teen lines lazmi add karein */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Isse header baki content ke upar rahega */
 }
 
 .brand {
