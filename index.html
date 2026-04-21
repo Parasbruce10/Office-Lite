@@ -1,35 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- ============================================================
+     HEAD SECTION
+     - Meta tags, SEO, Stylesheets
+     - Head-level ad scripts (jo <head> mein load hote hain)
+============================================================ -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- Google Site Verification -->
     <meta name="google-site-verification" content="BprjC503CEeSm0vQOMw7LKqSoXhSlNqXOeMsEjBViV4" />
 
+    <!-- Page Title & SEO -->
     <title>Office Lite - Free Online Word Editor & Document Tools</title>
-
     <meta name="description" content="Office Lite is a fast, free, and easy-to-use online word editor and document management tool. Create, edit, and format your text instantly directly from your browser.">
-
     <meta name="keywords" content="online word editor, free document editor, text formatting tool, Office Lite, type online">
 
+    <!-- Open Graph (Social Sharing) -->
     <meta property="og:title" content="Office Lite - Free Online Word Editor">
     <meta property="og:description" content="Create and edit your documents instantly for free.">
     <meta property="og:type" content="website">
 
+    <!-- Favicon & PWA -->
+    <link rel="icon" type="image/png" href="officelite.png">
+    <link rel="apple-touch-icon" href="officelite.png">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" type="image/png" href="officelite.png">
-    <link rel="apple-touch-icon" href="officelite.png"> 
-    <link rel="manifest" href="manifest.json">
-</head>
-<body>
-    <div id="root"></div>
 
+    <!-- =========================================================
+         HEAD AD — ProfitableCPM
+         (Yeh script <head> mein load hoti hai — yahan sahi jagah hai)
+    ========================================================== -->
+    <script src="https://pl29210508.profitablecpmratenetwork.com/96/a4/2c/96a42c9a29563053f1beee1210461370.js"></script>
+
+</head>
+
+
+<body>
+
+    <!-- ============================================================
+         HEADER SECTION
+         - Yahan woh ads hain jo page ke TOP par dikhte hain
+         - Best practice: Banner / leaderboard ads header mein hote hain
+    ============================================================ -->
+    <header>
+
+        <!-- HEADER AD 1: ProfitableCPM — Invoke Script -->
+        <script src="https://pl29210510.profitablecpmratenetwork.com/e0/60/32/e0603238b5b9d46773996f7c374c6bd0.js"></script>
+
+        <!-- HEADER AD 2: HighPerformanceFormat — 320x50 Mobile Banner (header ke liye best size) -->
+        <script>
+            atOptions = {
+                'key'    : '63bdb46aa078c35a999684b9a4dec76e',
+                'format' : 'iframe',
+                'height' : 50,
+                'width'  : 320,
+                'params' : {}
+            };
+        </script>
+        <script src="https://www.highperformanceformat.com/63bdb46aa078c35a999684b9a4dec76e/invoke.js"></script>
+
+        <!-- HEADER AD 3: ProfitableCPM — Direct Link (hidden tracking link) -->
+        <a href="https://www.profitablecpmratenetwork.com/cj3dueku0d?key=ae4c9908a4dc10eab6400868e4c96af2" style="display:none;" aria-hidden="true"></a>
+
+    </header>
+    <!-- /HEADER -->
+
+
+    <!-- ============================================================
+         MAIN CONTENT SECTION
+         - Yahan React app render hoga
+    ============================================================ -->
+    <main>
+        <div id="root"></div>
+    </main>
+    <!-- /MAIN -->
+
+
+    <!-- ============================================================
+         FOOTER SECTION
+         - Yahan woh ads hain jo page ke BOTTOM par hote hain
+         - Vignette, popunder, aur large banner ads footer mein best hote hain
+    ============================================================ -->
+    <footer>
+
+        <!-- FOOTER AD 1: ProfitableCPM — Container Invoke Ad -->
+        <script async="async" data-cfasync="false" src="https://pl29210511.profitablecpmratenetwork.com/78378795ee3aaa45989a186b4221fe76/invoke.js"></script>
+        <div id="container-78378795ee3aaa45989a186b4221fe76"></div>
+
+        <!-- FOOTER AD 2: HighPerformanceFormat — 300x250 Large Banner -->
+        <script>
+            atOptions = {
+                'key'    : 'b0d24676f6c7513812db2b021f5c6495',
+                'format' : 'iframe',
+                'height' : 250,
+                'width'  : 300,
+                'params' : {}
+            };
+        </script>
+        <script src="https://www.highperformanceformat.com/b0d24676f6c7513812db2b021f5c6495/invoke.js"></script>
+
+        <!-- FOOTER AD 3: Quge5 — Zone Tag Ad -->
+        <script src="https://quge5.com/88/tag.min.js" data-zone="232117" async data-cfasync="false"></script>
+
+        <!-- FOOTER AD 4: 5gvci — Zone Tag Ad -->
+        <script src="https://5gvci.com/act/files/tag.min.js?z=10906067" data-cfasync="false" async></script>
+
+        <!-- FOOTER AD 5: nap5k — Appended Script Zone Ad -->
+        <script>
+            (function(s) {
+                s.dataset.zone = '10906069';
+                s.src = 'https://nap5k.com/tag.min.js';
+            })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+        </script>
+
+        <!-- FOOTER AD 6: n6wxm — Vignette / Fullscreen Ad (footer mein load best hai) -->
+        <script>
+            (function(s) {
+                s.dataset.zone = '10906073';
+                s.src = 'https://n6wxm.com/vignette.min.js';
+            })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+        </script>
+
+    </footer>
+    <!-- /FOOTER -->
+
+
+    <!-- ============================================================
+         REACT, BABEL & APP SCRIPTS
+         - Yeh sabse last mein load hone chahiye
+         - Taake ads aur UI pehle render ho jayein
+    ============================================================ -->
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-    
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
     <script type="text/babel" src="app.js"></script>
-</body> 
+
+</body>
 </html>
