@@ -4,92 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Site Verification -->
     <meta name="google-site-verification" content="BprjC503CEeSm0vQOMw7LKqSoXhSlNqXOeMsEjBViV4" />
 
-    <!-- SEO -->
     <title>Office Lite - Free Online Word Editor & Document Tools</title>
-    <meta name="description" content="Office Lite is a fast, free, and easy-to-use online word editor and document management tool. Create, edit, and format your text instantly directly from your browser.">
-    <meta name="keywords" content="online word editor, free document editor, text formatting tool, Office Lite, type online">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Office Lite - Free Online Word Editor">
-    <meta property="og:description" content="Create and edit your documents instantly for free.">
-    <meta property="og:type" content="website">
-
-    <!-- Favicon & PWA -->
+    <meta name="description" content="Office Lite is a fast, free, and easy-to-use online word editor.">
+    
     <link rel="icon" type="image/png" href="officelite.png">
+    <link rel="shortcut icon" type="image/png" href="officelite.png">
     <link rel="apple-touch-icon" href="officelite.png">
-    <link rel="manifest" href="manifest.json">
 
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- HEAD AD: Background script (koi visual nahi) -->
     <script src="https://pl29210508.profitablecpmratenetwork.com/96/a4/2c/96a42c9a29563053f1beee1210461370.js"></script>
-    <script>
-    function injectTopBanner() {
-        var slot = document.getElementById('ad-slot-top');
-        
-        // Agar slot mil jaye aur ad abhi tak load na hua ho
-        if (slot && !slot.dataset.loaded) {
-            slot.dataset.loaded = 'true';
-
-            // Ad ki settings define karna
-            var atOptions = document.createElement('script');
-            atOptions.text = "atOptions = {'key':'63bdb46aa078c35a999684b9a4dec76e','format':'iframe','height':50,'width':320,'params':{}};";
-            slot.appendChild(atOptions);
-
-            // Ad ki main file load karna
-            var script = document.createElement('script');
-            script.src = 'https://www.highperformanceformat.com/63bdb46aa078c35a999684b9a4dec76e/invoke.js';
-            slot.appendChild(script);
-        } else if (!slot) {
-            // Agar React ne abhi tak div nahi banaya, toh 0.5s baad phir check karo
-            setTimeout(injectTopBanner, 500);
-        }
-    }
-
-    // Page load hone par function chalao
-    window.addEventListener('load', injectTopBanner);
-</script>
 </head>
 <body>
 
-    <!-- React App yahan render hoga -->
-    <!-- Footer + Ads Section dono app.js ke andar hain -->
     <div id="root"></div>
 
-    <!-- ═══════════════════════════════════════════════
-         REACT + BABEL
-    ════════════════════════════════════════════════ -->
-    
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
     <script type="text/babel" src="app.js"></script>
 
-    <!-- ═══════════════════════════════════════════════
-         ADS INJECT SCRIPT
-         React render hone ke baad ads ko slots mein daalta hai
-         Taake woh kabhi bhi cards ya content ke upar na aayein
-    ════════════════════════════════════════════════ -->
     <script>
-        // React render hone ka wait karo, phir ads inject karo
-        function injectAds() {
+        function runAdsSystem() {
+            // Hum sary slots dhoondty hain
+            var topSlot = document.getElementById('ad-slot-top');
             var slot1 = document.getElementById('ad-slot-1');
             var slot3 = document.getElementById('ad-slot-3');
             var slotCPM = document.getElementById('container-78378795ee3aaa45989a186b4221fe76');
 
-            if (!slot1 || !slot3 || !slotCPM) {
-                // Agar slots abhi ready nahi, 300ms baad dobara try karo
-                setTimeout(injectAds, 300);
+            // Agar React ne abhi tak page nahi banaya, toh thori der aur wait karo
+            if (!topSlot && !slot1) {
+                setTimeout(runAdsSystem, 500);
                 return;
             }
 
-            // AD 1: HighPerformanceFormat 320x50
-            if (!slot1.dataset.loaded) {
+            // 1. TOP BANNER (Header se UPAR - above header)
+            if (topSlot && !topSlot.dataset.loaded) {
+                topSlot.dataset.loaded = 'true';
+                // Ensure top-ad-container is truly above everything
+                var topContainer = document.getElementById('top-ad-container');
+                if (topContainer) {
+                    topContainer.style.position = 'relative';
+                    topContainer.style.zIndex = '9999';
+                    topContainer.style.width = '100%';
+                    topContainer.style.display = 'flex';
+                    topContainer.style.justifyContent = 'center';
+                    topContainer.style.background = '#f0f0f0';
+                    topContainer.style.padding = '8px 0';
+                    topContainer.style.borderBottom = '1px solid #ddd';
+                }
+                var s0 = document.createElement('script');
+                s0.text = "atOptions = {'key':'63bdb46aa078c35a999684b9a4dec76e','format':'iframe','height':50,'width':320,'params':{}};";
+                topSlot.appendChild(s0);
+                var s0src = document.createElement('script');
+                s0src.src = 'https://www.highperformanceformat.com/63bdb46aa078c35a999684b9a4dec76e/invoke.js';
+                topSlot.appendChild(s0src);
+            }
+
+            // 2. FOOTER AD 1 (320x50)
+            if (slot1 && !slot1.dataset.loaded) {
                 slot1.dataset.loaded = 'true';
                 var s1 = document.createElement('script');
                 s1.text = "atOptions = {'key':'63bdb46aa078c35a999684b9a4dec76e','format':'iframe','height':50,'width':320,'params':{}};";
@@ -99,18 +76,8 @@
                 slot1.appendChild(s1src);
             }
 
-            // AD 2: ProfitableCPM Invoke (container already in app.js)
-            if (!slotCPM.dataset.loaded) {
-                slotCPM.dataset.loaded = 'true';
-                var s2 = document.createElement('script');
-                s2.async = true;
-                s2.setAttribute('data-cfasync', 'false');
-                s2.src = 'https://pl29210511.profitablecpmratenetwork.com/78378795ee3aaa45989a186b4221fe76/invoke.js';
-                slotCPM.appendChild(s2);
-            }
-
-            // AD 3: HighPerformanceFormat 300x250
-            if (!slot3.dataset.loaded) {
+            // 3. FOOTER AD 3 (300x250)
+            if (slot3 && !slot3.dataset.loaded) {
                 slot3.dataset.loaded = 'true';
                 var s3 = document.createElement('script');
                 s3.text = "atOptions = {'key':'b0d24676f6c7513812db2b021f5c6495','format':'iframe','height':250,'width':300,'params':{}};";
@@ -119,36 +86,31 @@
                 s3src.src = 'https://www.highperformanceformat.com/b0d24676f6c7513812db2b021f5c6495/invoke.js';
                 slot3.appendChild(s3src);
             }
+
+            // 4. PROFITABLE CPM
+            if (slotCPM && !slotCPM.dataset.loaded) {
+                slotCPM.dataset.loaded = 'true';
+                var scpm = document.createElement('script');
+                scpm.async = true; scpm.setAttribute('data-cfasync', 'false');
+                scpm.src = 'https://pl29210511.profitablecpmratenetwork.com/78378795ee3aaa45989a186b4221fe76/invoke.js';
+                slotCPM.appendChild(scpm);
+            }
         }
 
-        // Page load hone ke baad shuru karo
+        // Page load ke bad shuru karo
         window.addEventListener('load', function() {
-            setTimeout(injectAds, 500);
+            setTimeout(runAdsSystem, 800); // 800ms wait taake React fully load hojaye
         });
     </script>
 
-    <!-- ═══════════════════════════════════════════════
-         BACKGROUND / ZONE ADS
-         Yeh sab invisible hain — layout affect nahi karte
-    ════════════════════════════════════════════════ -->
-
-    <!-- ProfitableCPM Direct Link (invisible) -->
-    <a href="https://www.profitablecpmratenetwork.com/cj3dueku0d?key=ae4c9908a4dc10eab6400868e4c96af2"
-       style="display:none;" aria-hidden="true"></a>
-
-    <!-- ProfitableCPM Invoke Script -->
     <script src="https://pl29210510.profitablecpmratenetwork.com/e0/60/32/e0603238b5b9d46773996f7c374c6bd0.js"></script>
 
-
-    <!-- n6wxm Vignette (fullscreen popunder — layout se alag) -->
     <script>
         (function(s) {
             s.dataset.zone = '10906073';
             s.src = 'https://n6wxm.com/vignette.min.js';
         })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
     </script>
-    <script>(function(s){s.dataset.zone='10907044',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-    <script>(function(s){s.dataset.zone='10907055',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
 </body>
 </html>

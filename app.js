@@ -1631,17 +1631,22 @@ const OfficeLiteApp = () => {
     return (
         
         <div className="dashboard-container" style={{ width: '100%', maxWidth: '100%', minHeight: '100vh', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
-            <div id="top-ad-wrapper" style={{ 
-            width: '100%', 
-            display: 'flex', 
-            justifyContent: 'center', 
-            padding: '10px 0', 
-            background: '#ffffff', // Ya jo aapki background theme hai
-            borderBottom: '1px solid #eee' 
-        }}>
-            {/* Yeh wo khali jagah hai jahan ad khud ko load karega */}
-            <div id="ad-slot-top"></div>
-        </div>
+            
+            {/* ── TOP AD — Header se bilkul UPAR ── */}
+            <div id="top-ad-container" style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '8px 0',
+                background: '#f0f0f0',
+                borderBottom: '1px solid #ddd',
+                minHeight: '66px',
+                boxSizing: 'border-box',
+                order: -1
+            }}>
+                <div id="ad-slot-top"></div>
+            </div>
 
             {/* Header */}
             <header className="header">
